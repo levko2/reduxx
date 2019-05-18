@@ -1,23 +1,20 @@
-
-
 import 'package:reduxx/model/model.dart';
 
-class AddItemAction{
+class AddItemAction {
   static int _id = 0;
   final String item;
 
-  AddItemAction(this.item){
+  AddItemAction(this.item) {
     _id++;
   }
 
-  int get  id => _id;
+  int get id => _id;
+}
 
- }
- class RemoveItemAction{
-
+class RemoveItemAction {
   final Item item;
 
   RemoveItemAction(this.item);
+}
 
- }
- class RemoveItemsAction{}
+class RemoveItemsAction {}

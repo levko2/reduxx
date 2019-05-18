@@ -38,12 +38,12 @@ class MyHomePage extends StatelessWidget {
       body: StoreConnector<AppState, _ViewModel>(
         converter: (Store<AppState> store) => _ViewModel.create(store),
         builder: (BuildContext context, _ViewModel viewModel) => Column(
-          children: <Widget>[
-            AddItemWidget(viewModel),
-            Expanded(child: ItemListWidget(viewModel)),
-            RemoveItemsButton(viewModel),
-          ],
-        ),
+              children: <Widget>[
+                AddItemWidget(viewModel),
+                Expanded(child: ItemListWidget(viewModel)),
+                RemoveItemsButton(viewModel),
+              ],
+            ),
       ),
     );
   }
@@ -73,12 +73,12 @@ class ItemListWidget extends StatelessWidget {
     return ListView(
       children: model.items
           .map((Item item) => ListTile(
-        title: Text(item.body),
-        leading: IconButton(
-          icon: Icon(Icons.delete),
-          onPressed: () => model.onRemoveItem(item),
-        ),
-      ))
+                title: Text(item.body),
+                leading: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () => model.onRemoveItem(item),
+                ),
+              ))
           .toList(),
     );
   }
